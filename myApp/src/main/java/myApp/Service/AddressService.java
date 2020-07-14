@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AddressService {
@@ -18,5 +19,14 @@ public class AddressService {
 
     public void save(Address address){
         repo.save(address);
+    }
+
+    public Address get(long id){
+        Optional<Address> result = repo.findById(id);
+        return result.get();
+    }
+
+    public void delete(long id){
+        repo.deleteById(id);
     }
 }

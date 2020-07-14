@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -6,7 +6,7 @@
 <html>
 <head>
     <%@ page isELIgnored="false" %>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>myApp</title>
 </head>
 <body>
@@ -20,12 +20,13 @@
     <h3><a href="newAddress">New address</a></h3>
     <hr>
 
-    <table border="5px" padding="5"> Address
+    <table border="5px" cellpadding="5"> Addresss
         <tr>
             <th>ID</th>
             <th>Country</th>
             <th>City</th>
             <th>Street</th>
+            <th>Patient</th>
             <td>Action</td>
         </tr>
         <c:forEach items="${addressList}" var="Address">
@@ -34,12 +35,15 @@
                 <td>${Address.country}</td>
                 <td>${Address.city}</td>
                 <td>${Address.street}</td>
-                <td><a href="edit">Edit</a>
-                    <a href="delete">Delete</a> </td>
+                <td><a href="editPatient?id=${patient.id}">patient</a></td>
+                <td>
+                    <a href="editAddress?id=${Address.id}">Edit</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="deleteAddress?id=${Address.id}">Delete</a> </td>
             </tr>
         </c:forEach>
     </table>
-
+    <h3><a href="patient">Patients</a></h3>
 </div>
 
 </body>
