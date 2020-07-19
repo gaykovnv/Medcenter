@@ -1,6 +1,6 @@
-package myApp.DAO.Interface;
+package myApp.dao.repository;
 
-import myApp.DAO.entity.Doctor;
+import myApp.dao.entity.Doctor;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

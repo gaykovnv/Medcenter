@@ -1,9 +1,12 @@
-package myApp.DAO.entity;
+package myApp.dao.entity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
-public class Patient {
+public class Doctor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -11,9 +14,9 @@ public class Patient {
     private String fname;
     private String lname;
     private String patronymic;
-    private int telephone;
+    private String specialty;
 
-    public Patient(){}
+    public Doctor(){}
 
     public Long getId() {
         return id;
@@ -47,22 +50,22 @@ public class Patient {
         this.patronymic = patronymic;
     }
 
-    public int getTelephone() {
-        return telephone;
+    public String getSpecialty() {
+        return specialty;
     }
 
-    public void setTelephone(int telephone) {
-        this.telephone = telephone;
+    public void setSpecialty(String specialty) {
+        this.specialty = specialty;
     }
 
     @Override
     public String toString() {
-        return "Patient{" +
+        return "Doctor{" +
                 "id=" + id +
                 ", fname='" + fname + '\'' +
                 ", lname='" + lname + '\'' +
                 ", patronymic='" + patronymic + '\'' +
-                ", telephone=" + telephone +
+                ", specialty='" + specialty + '\'' +
                 '}';
     }
 }

@@ -1,7 +1,7 @@
-package myApp.Service;
+package myApp.service;
 
-import myApp.DAO.Interface.PatientRepository;
-import myApp.DAO.entity.Patient;
+import myApp.dao.repository.PatientRepository;
+import myApp.dao.entity.Patient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
