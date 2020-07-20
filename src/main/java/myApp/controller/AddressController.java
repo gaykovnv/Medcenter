@@ -16,13 +16,12 @@ public class AddressController {
 
     @Autowired
     private AddressService addressService;
-    @RequestMapping("/")
-    public @ResponseBody ModelAndView home(){
-        ModelAndView mav = new ModelAndView("index");
-        List<Address> addressList = addressService.listAll();
-        mav.addObject("addressList", addressList);
-        return mav;
+
+    @GetMapping("/")
+    public String home(){
+        return "index";
     }
+
     @GetMapping("newAddress")
     public String newAddressForm(Map<String, Object> model){
         model.put("address",new Address());

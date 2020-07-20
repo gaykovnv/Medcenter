@@ -47,6 +47,10 @@
                 <td><form:input path="priority"/></td>
             </tr>
             <tr>
+                <td></td>
+                <td><h5>(use priority: normal, cito , statim)</h5></td>
+            </tr>
+            <tr>
                 <td colspan="2"><input type="submit" value="Save"></td>
                 <td><a href="prescription">Back</a></td>
             </tr>
