@@ -1,4 +1,4 @@
-package myApp.Config;
+package myApp.config;
 
 
 import org.springframework.web.WebApplicationInitializer;

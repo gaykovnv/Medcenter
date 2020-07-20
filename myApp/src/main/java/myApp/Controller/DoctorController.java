@@ -1,7 +1,7 @@
-package myApp.Controller;
+package myApp.controller;
 
-import myApp.DAO.entity.Doctor;
-import myApp.Service.DoctorService;
+import myApp.dao.entity.Doctor;
+import myApp.service.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +17,7 @@ public class DoctorController {
 
     @GetMapping("doctor")
     public @ResponseBody ModelAndView listDoctor(){
-        ModelAndView mav = new ModelAndView("DoctorPages/doctor");
+        ModelAndView mav = new ModelAndView("doctor_pages/doctor");
         List<Doctor> listDoctor = doctorService.listAll();
         mav.addObject("listDoctor",listDoctor);
         return mav;
@@ -26,7 +26,7 @@ public class DoctorController {
     @GetMapping("newDoctor")
     public String newDoctor(Map<String,Doctor> model) {
         model.put("doctor", new Doctor());
-        return "redirect:/";
+        return "doctor_pages/newDoctor";
     }
 
     @PostMapping("saveDoctor")
@@ -37,7 +37,7 @@ public class DoctorController {
 
     @GetMapping("editDoctor")
     public ModelAndView editDoctorForm(@RequestParam long id){
-        ModelAndView mav = new ModelAndView("DoctorPages/editDoctor");
+        ModelAndView mav = new ModelAndView("doctor_pages/editDoctor");
         Doctor doctor = doctorService.get(id);
         mav.addObject("doctor",doctor);
         return mav;

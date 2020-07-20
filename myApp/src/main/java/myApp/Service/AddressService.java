@@ -1,7 +1,7 @@
-package myApp.Service;
+package myApp.service;
 
-import myApp.DAO.Interface.AddressRepository;
-import myApp.DAO.entity.Address;
+import myApp.dao.repository.AddressRepository;
+import myApp.dao.entity.Address;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,8 +1,8 @@
-package myApp.Controller;
+package myApp.controller;
 
 
-import myApp.DAO.entity.Patient;
-import myApp.Service.PatientService;
+import myApp.dao.entity.Patient;
+import myApp.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +19,7 @@ public class PatientController {
 
     @GetMapping("patient")
     public @ResponseBody ModelAndView listPatients(){
-        ModelAndView mav = new ModelAndView("PatientPages/patient");
+        ModelAndView mav = new ModelAndView("patient_pages/patient");
         List<Patient> listPatients = patientService.listAll();
         mav.addObject("listPatients",listPatients);
         return mav;
@@ -28,7 +28,7 @@ public class PatientController {
     @GetMapping("newPatient")
     public String newPatient(Map<String, Patient> model){
         model.put("patient", new Patient());
-        return "PatientPages/newPatient";
+        return "patient_pages/newPatient";
     }
 
 
@@ -40,7 +40,7 @@ public class PatientController {
 
     @GetMapping("editPatient")
     public ModelAndView editPatientForm(@RequestParam long id){
-        ModelAndView mav = new ModelAndView("PatientPages/editPatient");
+        ModelAndView mav = new ModelAndView("patient_pages/editPatient");
         Patient patient = patientService.get(id);
         mav.addObject("patient", patient);
         return mav;
@@ -48,9 +48,8 @@ public class PatientController {
 
     @GetMapping("deletePatient")
     public String deletePatientForm(@RequestParam long id){
-//        addressService.delete(id);
         patientService.delete(id);
-        return "PatientPages/patient";
+        return "redirect:/";
     }
 
 }

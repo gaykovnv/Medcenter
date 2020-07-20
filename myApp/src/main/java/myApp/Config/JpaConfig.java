@@ -1,4 +1,4 @@
-package myApp.Config;
+package myApp.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,7 +9,7 @@ import org.springframework.orm.jpa.LocalEntityManagerFactoryBean;
 import javax.persistence.EntityManagerFactory;
 
 @Configuration
-@EnableJpaRepositories(basePackages = "myApp.DAO")
+@EnableJpaRepositories(basePackages = "myApp.dao")
 public class JpaConfig {
     @Bean
     public LocalEntityManagerFactoryBean entityManagerFactory(){

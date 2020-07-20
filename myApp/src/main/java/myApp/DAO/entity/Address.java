@@ -1,4 +1,4 @@
-package myApp.DAO.entity;
+package myApp.dao.entity;
 
 
 import javax.persistence.*;
