@@ -29,4 +29,8 @@ public class PatientService {
     public void delete(long id){
         repo.deleteById(id);
     }
+
+    public List<Patient> search(String keyword){
+        return repo.search(keyword);
+    }
 }

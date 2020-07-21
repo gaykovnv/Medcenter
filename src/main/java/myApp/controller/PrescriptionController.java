@@ -51,4 +51,12 @@ public class PrescriptionController {
         return "redirect:/";
     }
 
+    @GetMapping("search")
+    public ModelAndView search(@RequestParam String keyword){
+        ModelAndView mav = new ModelAndView("prescription_pages/searchPrescription");
+        List<Prescription> result = service.search(keyword);
+        mav.addObject("result", result);
+        return mav;
+    }
+
 }

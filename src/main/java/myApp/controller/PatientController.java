@@ -4,6 +4,7 @@ package myApp.controller;
 import myApp.dao.entity.Patient;
 import myApp.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -52,4 +53,11 @@ public class PatientController {
         return "redirect:/";
     }
 
+    @GetMapping("search")
+    public ModelAndView search(@RequestParam String keyword){
+        ModelAndView mav = new ModelAndView("patient_pages/searchPatient");
+        List<Patient> result = patientService.search(keyword);
+        mav.addObject("result", result);
+        return mav;
+    }
 }

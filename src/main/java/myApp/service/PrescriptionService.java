@@ -29,4 +29,8 @@ public class PrescriptionService {
     public void delete(long id){
         repo.deleteById(id);
     }
+
+    public List<Prescription> search(String keyword){
+        return repo.search(keyword);
+    }
 }
