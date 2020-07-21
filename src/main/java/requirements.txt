@@ -1,5 +1,0 @@
-spring-data-jpa="2.3.1.RELEASE"
-mysql-connector-java="8.0.20"
-javax.servlet.jsp-api="2.3.3"
-jstl="1.2"
-hibernate-entitymanager="5.2.3.Final"

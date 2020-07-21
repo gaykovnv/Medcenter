@@ -48,4 +48,12 @@ public class DoctorController {
         doctorService.delete(id);
         return "redirect:/";
     }
+
+    @GetMapping("search")
+    public ModelAndView search(@RequestParam String keyword){
+        ModelAndView mav = new ModelAndView("doctor_pages/search");
+        List<Doctor> result = doctorService.search(keyword);
+        mav.addObject("result",result);
+        return mav;
+    }
 }

@@ -1,12 +1,10 @@
 FROM  tomcat:9.0
 
 RUN mkdir -p /usr/src/main/java/myApp
-//ADD art-gallery-management.war /usr/local/tomcat/webapps/art-gallery-management.war
+ADD myApp.war /usr/local/tomcat/webapps/myApp.war
 
 WORKDIR /usr/src/main/java/myApp/
 COPY . /usr/src/myApp
-
-RUN pip install --no-cache-dir -r requirements.txt
 
 ENV TZ Europe/Samara
 EXPOSE 8080
