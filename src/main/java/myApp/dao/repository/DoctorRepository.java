@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-@NoRepositoryBean
+//@NoRepositoryBean
 public interface DoctorRepository extends CrudRepository<Doctor,Long> {
 
     @Query(value=" SELECT c FROM  Doctor c WHERE c.fname LIKE '%' OR :keyword "
