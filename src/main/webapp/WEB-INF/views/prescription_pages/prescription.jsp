@@ -9,47 +9,66 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <%@ page isELIgnored="false" %>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>myApp</title>
 </head>
 <body>
-<div align="center">
-    <h1>Manager Prescription</h1>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div align="center">
+                <h1>Manager Prescription</h1>
 
-    <form method="post" action="filterPrescription">
-        <input type="text" name="keyword"/>
-        <input type="submit" value="Filter">
-    </form>
-    <hr>
-    <h3><a href="newPrescription">New prescription</a></h3>
-    <table border="5" cellpadding="5"> Prescription
-        <tr>
-            <th>ID</th>
-            <th>Description</th>
-            <th>Doctor</th>
-            <th>DateCreate</th>
-            <th>Deadline</th>
-            <th>Priority</th>
-            <th>Action</th>
-        </tr>
-        <c:forEach items="${listPrescription}" var="prescription">
-            <tr>
-                <td>${prescription.id}</td>
-                <td>${prescription.description}</td>
-                <td> </td>
-                <td>${prescription.dateCreate}</td>
-                <td>${prescription.deadline}</td>
-                <td>${prescription.priority}</td>
-                <td>
-                    <a href="editPrescription?id=${prescription.id}">edit</a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="deletePrescription?id=${prescription.id}">delete</a>
-                </td>
-            </tr>
-        </c:forEach>
-    </table>
-    <h3><a href="/myApp/">Main Page</a></h3>
+                <form method="post" action="filterPrescription">
+                    <input type="text" name="keyword"/>
+                    <input class="btn btn-outline-info m-2" type="submit" value="Filter">
+                </form>
+                <hr>
+                <h3><a class="btn btn-outline-primary my-2" href="newPrescription">New prescription</a></h3>
+                <table class="table"> Prescription
+                    <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Description</th>
+                        <th>Doctor</th>
+                        <th>DateCreate</th>
+                        <th>Deadline</th>
+                        <th>Priority</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <c:forEach items="${listPrescription}" var="prescription">
+                        <tr>
+                            <td scope="col">${prescription.id}</td>
+                            <td scope="col">${prescription.description}</td>
+                            <td scope="col"></td>
+                            <td scope="col">${prescription.dateCreate}</td>
+                            <td scope="col">${prescription.deadline}</td>
+                            <td scope="col">${prescription.priority}</td>
+                            <td scope="col">
+                                <a class="btn btn-outline-secondary m-2" href="editPrescription?id=${prescription.id}">edit</a>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <a class="btn btn-outline-danger m-2" href="deletePrescription?id=${prescription.id}">delete</a>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </table>
+                <h3><a class="btn btn-outline-primary my-2" href="/myApp/">Main Page</a></h3>
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                        crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                        crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+                        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+                        crossorigin="anonymous"></script>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
