@@ -32,9 +32,9 @@
                 <td>${doctor.patronymic}</td>
                 <td>${doctor.specialty}</td>
             </tr>
-            <a href="doctor">Back</a>
         </c:forEach>
     </table>
+    <a href="doctor">Back</a>
 </div>
 </body>
 </html>

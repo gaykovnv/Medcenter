@@ -11,8 +11,7 @@ import java.util.List;
 @Repository
 public interface PrescriptionRepository extends CrudRepository<Prescription,Long> {
 
-    @Query( value=" SELECT c FROM Prescription c WHERE c.description LIKE '%' OR :keyword "
-            + " OR c.priority LIKE '%' OR :keyword "
-            + " OR c.deadline LIKE '%' OR :keyword " )
-    List<Prescription> search(@Param("keyword") String keyword);
+    @Query("from Prescription p where concat(p.description,' ',p.priority,' ',p.deadline)"+
+            "like concat('%', :keyword,'%')")
+    List<Prescription> findByKeyword(@Param("keyword") String keyword);
 }

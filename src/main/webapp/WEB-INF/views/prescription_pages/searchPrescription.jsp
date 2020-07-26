@@ -24,7 +24,7 @@
             <th>Deadline</th>
             <th>Priority</th>
         </tr>
-        <c:forEach items="result" var="prescription">
+        <c:forEach items="${result}" var="prescription">
             <tr>
                 <td>${prescription.id}</td>
                 <td>${prescription.description}</td>
@@ -32,9 +32,9 @@
                 <td>${prescription.deadline}</td>
                 <td>${prescription.priority}</td>
             </tr>
-            <a href="prescription">Back</a>
         </c:forEach>
     </table>
+    <a href="prescription">Back</a>
 </div>
 </body>
 </html>

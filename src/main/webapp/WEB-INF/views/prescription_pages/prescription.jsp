@@ -17,9 +17,9 @@
 <div align="center">
     <h1>Manager Prescription</h1>
 
-    <form method="get" action="search">
+    <form method="post" action="filterPrescription">
         <input type="text" name="keyword"/>
-        <input type="submit" value="Search">
+        <input type="submit" value="Filter">
     </form>
     <hr>
     <h3><a href="newPrescription">New prescription</a></h3>

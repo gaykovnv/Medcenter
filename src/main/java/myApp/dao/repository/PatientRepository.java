@@ -11,8 +11,7 @@ import java.util.List;
 @Repository
 public interface PatientRepository extends CrudRepository<Patient,Long> {
 
-    @Query( value=" SELECT c FROM Patient c WHERE c.fname LIKE '%' OR :keyword "
-            + " OR c.lname LIKE '%' OR :keyword "
-            + " OR c.patronymic LIKE '%' OR :keyword ")
-    List<Patient> search(@Param("keyword") String keyword);
+    @Query("from Patient p where concat(p.fname,' ',p.lname,' ',p.patronymic,' ',p.telephone)"+
+            "like concat('%',:keyword,'%')")
+    List<Patient> findByKeyword(@Param("keyword") String keyword);
 }

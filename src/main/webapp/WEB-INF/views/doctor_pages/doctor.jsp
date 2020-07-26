@@ -17,9 +17,9 @@
 <div align="center">
     <h1>Doctor Manager</h1>
 
-    <form method="get" action="search">
+    <form method="post" action="filterDoctor">
         <input type="text" name="keyword"/>
-        <input type="submit" value="Search">
+        <input type="submit" value="Filter">
     </form>
     <hr>
     <h3><a href="newDoctor">New Doctor</a></h3>

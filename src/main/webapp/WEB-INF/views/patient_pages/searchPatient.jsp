@@ -24,7 +24,7 @@
             <th>Patronymic</th>
             <th>Telephone</th>
         </tr>
-        <c:forEach items="result" var="patient">
+        <c:forEach items="${result}" var="patient">
             <tr>
                 <td>${patient.id}</td>
                 <td>${patient.fname}</td>
@@ -32,9 +32,9 @@
                 <td>${patient.patronymic}</td>
                 <td>${patient.telephone}</td>
             </tr>
-            <a href="patient">Back</a>
         </c:forEach>
     </table>
+    <a href="patient">Back</a>
 </div>
 </body>
 </html>

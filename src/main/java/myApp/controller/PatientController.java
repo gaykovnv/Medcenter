@@ -53,10 +53,10 @@ public class PatientController {
         return "redirect:/";
     }
 
-    @GetMapping("search")
-    public ModelAndView search(@RequestParam String keyword){
+    @PostMapping("filterPatient")
+    public ModelAndView filterPatient(@RequestParam String keyword){
         ModelAndView mav = new ModelAndView("patient_pages/searchPatient");
-        List<Patient> result = patientService.search(keyword);
+        List<Patient> result = patientService.filter(keyword);
         mav.addObject("result", result);
         return mav;
     }

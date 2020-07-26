@@ -30,7 +30,7 @@ public class DoctorService {
         repo.deleteById(id);
     }
 
-    public List<Doctor> search(String keyword){
-        return repo.search(keyword);
+    public List<Doctor> filter(String keyword){
+        return repo.findByKeyword(keyword);
     }
 }

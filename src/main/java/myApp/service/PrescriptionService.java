@@ -30,7 +30,7 @@ public class PrescriptionService {
         repo.deleteById(id);
     }
 
-    public List<Prescription> search(String keyword){
-        return repo.search(keyword);
+    public List<Prescription> filter(String keyword){
+        return repo.findByKeyword(keyword);
     }
 }
